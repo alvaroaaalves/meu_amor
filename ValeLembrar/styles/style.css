@@ -1,0 +1,117 @@
+/*
+    Estilos Globais e Reset
+    Ajustados para um visual mais suave.
+*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fce4ec; /* Rosa claro e delicado */
+    font-family: 'Georgia', serif; /* Fonte mais clássica e romântica */
+}
+
+/*
+    Estilos para o Jogo da Memória
+*/
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(200, 100, 150, .3); /* Sombra mais suave e colorida */
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+    border-radius: 10px; /* Bordas mais arredondadas para suavizar */
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 10px; /* Bordas arredondadas */
+    background: #fff; /* Fundo branco para as cartas */
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+/* Animação do flip */
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+/*
+    Estilos para Títulos e Subtítulos
+*/
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive; /* Fonte cursiva para um toque elegante */
+    color: #e91e63; /* Rosa vibrante para os títulos */
+    margin-bottom: 10px;
+    text-align: center; /* <<< Adicionado para centralizar os títulos */
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #880e4f;
+}
+
+/*
+    Estilos para o Botão
+*/
+body a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 60px;
+    background-color: #ff69b4; /* Rosa choque */
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body a:hover {
+    background-color: #ff1493;
+    transform: translateY(-2px);
+}
